@@ -55,6 +55,7 @@ int main(){
             break;
 
             case 4:
+            exit(1);
             break;
 
             default:
