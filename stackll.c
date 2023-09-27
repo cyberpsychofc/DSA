@@ -1,35 +1,44 @@
 #include<stdio.h>
 #include<conio.h>
 
-int stack[100];
-int top = -1;
+struct stackll{
+    int element;
+    struct stackll *next;
+}*top;
 
 void push(int value){
-    if(top==99){
-        printf("Stack OverFlow Occured!");
-    }
-    else{
-        top++;
-        stack[top] = value;
-    }
+    struct stackll *ptr;
+    //Reserving Memory for new node of Stack
+    ptr = (struct stackll*)malloc(sizeof(struct stackll));
+    //Storing value
+    ptr -> element = value;
+    //Updating top address
+    ptr -> next = top;
+    top = ptr;
+    return;
 }
 int pop(){
-    if(top==-1){
-        printf("Stack UnderFLow Occured!");
+    if(top==NULL){
+        printf("Stack UnderFLow detected!");
+        exit(1);
     }
     else{
-        return stack[top--];
+        //Retreving top element
+        int temp = top -> element;
+        top = top -> next;
+        return temp;
     }
 }
 void peep(){
+    struct stackll *ptr;
     printf("\nStack Elements :");
-    for(int i=top;i>=0;i--){
-        printf("\n%d",stack[i]);
+    for(ptr=top;ptr!=NULL;ptr=ptr->next){
+        printf("\n%d",ptr->element);
     }
 }
 
 int main(){
-    /*Switch Implementation 1. Push 2. Pop 3. peep 4. Exit*/
+    /*Switch Implementation 1. Push 2. Pop 3. Display 4. Exit*/
     int choice;
     int num1 = 0,num2 = 0;
 
