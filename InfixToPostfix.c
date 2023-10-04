@@ -36,7 +36,7 @@ void push(int value){
 }
 
 int checkOperand(char ch){
-    return ((ch >= 'a' && ch <= 'z') || (ch >= 'A' && ch <= 'Z'));
+    return ((ch >= 'a' && ch <= 'z') || (ch >= 'A' && ch <= 'Z') || (ch >= '0' && ch <= '9'));
 }
 int checkPrecedence(char ch){
     switch(ch){
