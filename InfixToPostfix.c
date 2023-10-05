@@ -45,23 +45,29 @@ int checkPrecedence(char ch){
             return 1; //since Precedence of these operator is '1'
         case '*':
         case '/':
-            return 2;
+            return 2; //Precedence of these operator is '2'
         case '^':
-            return 3;
+            return 3; //Precedence of these operator is '3'
         default:
             break;
     }
     return -1;
 }
 void infixToPostfix(char *expre){
+    /* i to traverse through the given expression
+       j to index the result array */
     int i,j;
-    for(i=0, j=-1;expre[i];++i){
-        if(checkOperand(expre[i])==1){
+    for(i=0, j=-1;expre[i];++i){ //till expre[i] reaches a null character
+        if(checkOperand(expre[i])==1){ //if it's an operand, append it
             expre[++j] = expre[i];
         }
-        else if(expre[i]!='('){
+        else if(expre[i]!='('){ //if it's an operator and not an operand
             push(expre[i]);
         }
+        /*
+        If the current character is a closing parenthesis ‘)’, 
+        it pops elements from the stack and adds them to the 
+        result */
         else if(expre[i]!=')'){   
                 while (!isEmpty() && peek() != '(')   
                     expre[++j] = pop();   
