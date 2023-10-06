@@ -22,6 +22,9 @@ void insert(int value){
     }
     /*makes the rear pointer point to the
      beginning of the queue*/
+
+
+    /* rear = (rear++) % length */
     else if(rear == 4){
         rear = 0;
     }
@@ -48,6 +51,8 @@ int delete(){
     /*points at the beginning,
     if front points at the last element
     of the queue*/
+
+    /* front = (front++) % length */
     else if(front == 4){
         front = 0;
         return (i);
