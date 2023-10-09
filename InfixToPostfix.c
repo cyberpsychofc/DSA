@@ -5,7 +5,7 @@ char stack[10];
 
 int top = -1;
 
-isEmpty(){
+int isEmpty(){
     if(top==-1){
         return 1;
     }
