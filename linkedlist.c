@@ -28,6 +28,7 @@ struct node *search (int value){
 }
 
 void insert(int value){
+    /*creates a new node and and allots memory to the new node w/ an instance of a struct node */
     struct node *ptr = (struct node*)malloc(sizeof(struct node));
 
     ptr -> element = value;
