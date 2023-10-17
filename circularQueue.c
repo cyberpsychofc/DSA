@@ -10,6 +10,8 @@ void insert(int value){
     /*front == rear + 1, 
     checks if there is an element at the beginning 
     of the queue*/
+    
+    //if((front == 0 && rear==4) || front == (rear + 1) % 5)
     if((front == 0 && rear==4) || front == rear + 1){
         printf("Queue Overflow!");
         return;
@@ -29,6 +31,7 @@ void insert(int value){
         rear = 0;
     }
     else{
+        // rear = (rear + 1) % 5; after eliminating the above else-if
         rear++;
     }
     queue[rear]=value;
@@ -52,12 +55,12 @@ int delete(){
     if front points at the last element
     of the queue*/
 
-    /* front = (front++) % length */
     else if(front == 4){
         front = 0;
         return (i);
     }
     else{
+        // front = (front + 1) % 5; after eliminating the above else-if
         front++;
         return(i);
     }
