@@ -99,6 +99,7 @@ int delete(int value){
         else{
             first = first -> next;
         }
+        count--;
         return value;
     }
     //This for loop does not execute any instructions, but only updates the pointer
@@ -108,6 +109,7 @@ int delete(int value){
     //the previous and next node of the given element are linked
     if(loc == last){
         last = temp; //former last node is removed
+        count--;
     }
     return (loc -> element);
 }
@@ -121,6 +123,7 @@ int delete_beg(){
     else{
         temp = first->element;
         first = first->next;
+        count--;
     }
     return temp;
 }
@@ -139,6 +142,7 @@ int delete_end(){
                 last = pos;
             }
         }
+        count--;
         return temp;
     }
 }
