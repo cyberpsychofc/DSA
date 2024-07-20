@@ -1,5 +1,3 @@
-package test;
-
 public class CombinationBoardPath {
 	public static void Boardpath(boolean arr[], int qpsf, int totq, String ans, int last) {
 		if(qpsf == totq) {

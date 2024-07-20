@@ -1,4 +1,3 @@
-package test;
 
 public class BoardPath {
 	public static void Boardpath(boolean arr[], int qpsf, int totq, String ans) {

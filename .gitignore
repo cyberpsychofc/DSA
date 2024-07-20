@@ -1,4 +1,6 @@
 *.exe
+*.iml
+.idea
 .vscode
 .minttyrc
 .gitconfig
@@ -6,3 +8,4 @@
 .esd_auth
 .ssh
 .config
+**/out
