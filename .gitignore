@@ -1,8 +1,8 @@
-*.exe
-*.vscode
-*.minttyrc
-*.gitconfig
-*.bash_history
-*.esd_auth
-*.ssh
-*.config
+.exe
+.vscode
+.minttyrc
+.gitconfig
+.bash_history
+.esd_auth
+.ssh
+.config
