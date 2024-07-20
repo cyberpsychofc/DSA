@@ -4,3 +4,5 @@
 *.gitconfig
 *.bash_history
 *.esd_auth
+*.ssh
+*.config
