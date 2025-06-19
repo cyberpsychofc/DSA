@@ -3,6 +3,7 @@ class Solution {
         visited[v] = true;
 
         for (int i = 0; i < adj.length; i++) {
+                //check for neighbours which have not been visited yet
                 if (adj[v][i] == 1 && !visited[i])
                     dfs(i, adj, visited);
         }
