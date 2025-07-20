@@ -9,7 +9,7 @@ class Solution {
         for (int i = 0; i < pattern.length(); i++) {
             if (map.containsKey(pattern.charAt(i)) && map.get(pattern.charAt(i)).equals(words[i]))
                 continue;
-            else if (map.containsKey(pattern.charAt(i)) && !(map.get(pattern.charAt(i)).equals(words[i])) || !map.containsValue(pattern.charAt(i)) && map.containsValue(words[i])) {
+            else if (map.containsKey(pattern.charAt(i)) && !(map.get(pattern.charAt(i)).equals(words[i])) || !(map.containsValue(pattern.charAt(i))) && map.containsValue(words[i])) {
                 return false;
                 }
             else
