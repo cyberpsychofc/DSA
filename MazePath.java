@@ -1,5 +1,5 @@
 import java.util.*;
-public class Solution {
+public class MazePath {
     static int countPathsInMaze(int r, int c){
         if (r == 1 || c == 1)
             return 1;
