@@ -1,6 +1,5 @@
 import java.util.*;
-
-public class MazePath {
+public class Solution {
     static int countPathsInMaze(int r, int c){
         if (r == 1 || c == 1)
             return 1;
@@ -56,14 +55,43 @@ public class MazePath {
             allPathsWithObs(maze, path + "→", r, c + 1);
     }
 
+    static void allDirections(boolean[][] maze, String path, int r, int c) {
+        if (r == maze.length - 1 && c == maze[0].length - 1) {
+            System.out.println(path);
+            return;
+        }
+
+        if (!maze[r][c])    // stop recursion if obstacle present
+            return;
+
+        //        mark as visited
+        maze[r][c] = false;
+
+        if (r < maze.length - 1 && c < maze[0].length - 1)
+            allDirections(maze, path + "↘", r + 1, c + 1);
+        if (r > 0 && c > 0)
+            allDirections(maze, path + "↖", r - 1, c - 1);
+        if (r < maze.length - 1)
+            allDirections(maze, path + "↓", r + 1, c);
+        if (c < maze[0].length - 1)
+            allDirections(maze, path + "→", r, c + 1);
+        if (r > 0)
+            allDirections(maze, path + "↑", r - 1, c);
+        if (c > 0)
+            allDirections(maze, path + "←", r, c - 1);
+
+        // backtrack changes
+        maze[r][c] = true;
+    }
+
 
     public static void main(String arg[]) {
-//        System.out.print(countPathsInMaze(3, 3));
+        //        System.out.print(countPathsInMaze(3, 3));
         boolean [][] maze = {
                 {true, true, true},
                 {true, false, true},
                 {true, true, true}
         };
-        allPathsWithObs(maze, "", 0, 0);
+        allDirections(maze, "", 0, 0);
     }
 }
