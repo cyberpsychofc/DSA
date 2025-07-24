@@ -7,8 +7,8 @@ class Solution {
         while (temp > 0) {
             int offset = --temp % 26;
             temp /= 26;
-            sb.insert(0, (char) (65 + offset));
+            sb.append((char) (65 + offset));
         }
-        return sb.toString();
+        return sb.reverse().toString();
     }
 }
