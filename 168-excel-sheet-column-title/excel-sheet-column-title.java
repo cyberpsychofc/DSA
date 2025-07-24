@@ -6,10 +6,8 @@ class Solution {
         // A - 65 aur Z - 90
         while (temp > 0) {
             int offset = --temp % 26;
-            System.out.println(offset);
             temp /= 26;
-
-                sb.insert(0, (char) (65 + offset));
+            sb.insert(0, (char) (65 + offset));
         }
         return sb.toString();
     }
