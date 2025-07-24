@@ -9,8 +9,8 @@ class Solution {
             System.out.println(offset);
             temp /= 26;
 
-                sb.append((char) (65 + offset));
+                sb.insert(0, (char) (65 + offset));
         }
-        return sb.reverse().toString();
+        return sb.toString();
     }
 }
