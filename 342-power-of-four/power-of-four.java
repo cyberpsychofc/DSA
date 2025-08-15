@@ -3,6 +3,6 @@ class Solution {
         double power = Math.log(n) / Math.log(4);
         if (power == 1 && n % 4 != 0)
             return false;
-        return power % 1 == 0.0 ? true : false;
+        return power % 1 == 0.0;
     }
 }
