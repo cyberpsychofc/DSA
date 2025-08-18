@@ -5,7 +5,7 @@ class Solution {
         arr[idx2] = temp;
     }
     public static void reverse(int[] arr, int st, int end) {
-        while (st < end) {
+        while (st <= end) {
             swap(arr, st, end);
             st++;
             end--;
