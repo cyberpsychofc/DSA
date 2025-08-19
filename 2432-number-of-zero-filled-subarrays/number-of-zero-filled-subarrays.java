@@ -3,14 +3,14 @@ class Solution {
         long total = 0;
         long size = 0;
         for (int i : nums){
-            if (i == 0)
+            if (i == 0){
                 size++;
+                total += size;
+            }
             else {
-                total += size * (size + 1) / 2;
                 size = 0;
             }
         }
-        total += size * (size + 1) / 2;
         return total;
     }
 }
